@@ -1,0 +1,48 @@
+<header>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">BudgetApp</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" href=<%= groups_path %>>Home</a>
+        </div>
+        <div class="nav-buttons ms-auto d-flex align-items-baseline">
+          <% if current_user.present? %>
+            <div class="btn-group">
+              <button
+                type="button"
+                class="btn btn-outline dropdown-toggle me-3"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Welcome,
+              <%= current_user.name %>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href=<%= root_path %>>placeholder1</a></li>
+                <li><a class="dropdown-item" href=<%= root_path %>>placeholder2</a></li>
+              </ul>
+            </div>            
+            <%= button_to(
+              "Log Out",
+              destroy_user_session_path,
+              method: :delete,
+              class: "btn btn-primary"
+            ) %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
