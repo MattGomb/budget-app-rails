@@ -1,9 +1,27 @@
 <p style="color: green"><%= notice %></p>
 <section class="mx-4">
-  <%= render @group %>
-  <div class="my-2">
-    <%= link_to "Edit this category", edit_category_path(@group), class: 'btn btn-secondary' %> |
-    <%= link_to "Back to cateogires", categories_path, class: 'btn btn-secondary' %>
+  <div class="d-flex justify-content-between">
+    <%= link_to "Back to cateogires", categories_path, class: 'btn btn-secondary mb-3' %>
+    <%= button_to 'New expense', new_category_expense_path(@group), method: :get, class: 'btn btn-primary mb-3' %>
   </div>
-  <%= button_to "Delete category", category_path(@group), method: :delete, class: 'btn btn-danger' %>
+  <div class="d-flex flex-column align-items-center">
+    <h3>
+      <%= @group.name %>: $<%= @group.total_expenses %>
+    </h3>
+    <% @group.expenses.each do |e| %>
+    <div class="container">
+      <div>
+        <h5><%= e.name %></h5>
+        <p><%= e.amount %></p>
+      </div>
+      <div>
+        <%= entity.updated_at.strftime('%A-%b-%Y | %H:%M:%S') %>
+      </div>
+    </div>
+    <% end %>
+    <div class="my-2">
+      <!-- <%= link_to "Edit this category", edit_category_path(@group), class: 'btn btn-secondary' %> | -->
+      <%= button_to "Delete category", category_path(@group), method: :delete, class: 'btn btn-danger' %>
+    </div>
+  </div>
 </section>

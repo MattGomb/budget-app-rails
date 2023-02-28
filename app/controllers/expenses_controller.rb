@@ -12,6 +12,7 @@ class ExpensesController < ApplicationController
   # GET /expenses/new
   def new
     @expense = Expense.new
+    @groups = Group.all
   end
 
   # GET /expenses/1/edit
@@ -20,14 +21,14 @@ class ExpensesController < ApplicationController
   # POST /expenses or /expenses.json
   def create
     @expense = Expense.new(expense_params)
+    @expense.author = current_user
+    @group = Group.find(params[:group_id])
 
     respond_to do |format|
       if @expense.save
-        format.html { redirect_to expense_url(@expense), notice: 'Expense was successfully created.' }
-        format.json { render :show, status: :created, location: @expense }
+        format.html { redirect_to category_url(@group), notice: 'Expense was successfully created.' }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @expense.errors, status: :unprocessable_entity }
       end
     end
   end
