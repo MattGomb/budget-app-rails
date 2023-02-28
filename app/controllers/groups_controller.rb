@@ -24,7 +24,7 @@ class GroupsController < ApplicationController
 
     respond_to do |format|
       if @group.save
-        format.html { redirect_to category_url(@group), notice: 'Group was successfully created.' }
+        format.html { redirect_to category_url(@group), notice: 'Category was successfully created.' }
       else
         format.html { render :new, status: :unprocessable_entity }
       end

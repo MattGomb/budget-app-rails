@@ -1,10 +1,13 @@
-<h1>Editing group</h1>
+<section class="mx-4 my-3">
+  <h1>Editing <%= @group.name %></h1>
 
-<%= render "form", group: @group %>
+  <%= render "form", group: @group %>
 
-<br>
+  <br>
 
-<div>
-  <%= link_to "Show this group", category_path(@group) %> |
-  <%= link_to "Back to groups", category_path %>
-</div>
+  <div>
+    <%= link_to "Show this group", category_path(@group) %> |
+    <%= link_to "Back to groups", categories_path %>
+  </div>
+</section>
+
