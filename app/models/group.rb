@@ -5,4 +5,8 @@ class Group < ApplicationRecord
 
   validates :name, presence: true, length: { minimum: 1, maximum: 50 }
   validates :icon, presence: true, length: { minimum: 1, maximum: 200 }
+
+  def total_expenses
+    expenses.sum(:amount)
+  end
 end
