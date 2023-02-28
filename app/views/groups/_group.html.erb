@@ -1,17 +1,9 @@
-<div id="<%= dom_id group %>">
-  <p>
-    <strong>Author:</strong>
-    <%= group.author_id %>
-  </p>
-
-  <p>
+<div id="<%= dom_id group %>" class="d-flex border border-dark">
+  <img src=<%= group.icon %> alt="category icon" class="col-2">
+  <p class="col">
     <strong>Name:</strong>
-    <%= group.name %>
+    <%= group.name %> </br>
+    <strong>Total spent:</strong>
+    <%= group.total_expenses %>
   </p>
-
-  <p>
-    <strong>Icon:</strong>
-    <%= group.icon %>
-  </p>
-
 </div>

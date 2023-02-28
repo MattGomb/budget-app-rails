@@ -3,9 +3,10 @@ Rails.application.routes.draw do
                                     registrations: 'users/registrations',
                                     passwords: 'users/passwords'
                                   }
-  resources :expenses
-  resources :groups
   resources :users
+  resources :groups, as: :categories, path: '/categories' do
+    resources :expenses
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

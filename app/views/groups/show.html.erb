@@ -1,10 +1,9 @@
 <p style="color: green"><%= notice %></p>
-
-<%= render @group %>
-
-<div>
-  <%= link_to "Edit this group", edit_group_path(@group) %> |
-  <%= link_to "Back to groups", groups_path %>
-
-  <%= button_to "Destroy this group", @group, method: :delete %>
-</div>
+<section class="mx-4">
+  <%= render @group %>
+  <div class="my-2">
+    <%= link_to "Edit this category", edit_category_path(@group), class: 'btn btn-secondary' %> |
+    <%= link_to "Back to cateogires", categories_path, class: 'btn btn-secondary' %>
+  </div>
+  <%= button_to "Delete category", category_path(@group), method: :delete, class: 'btn btn-danger' %>
+</section>
