@@ -14,17 +14,17 @@
  *= require_self
  */
 
- $theme-colors: (
-   "primary": #3778c2,
-   "secondary": #6c757d,
-   "success": #28a745,
-   "info": #17a2b8,
-   "warning": #ffc107,
-   "danger": #dc3545,
-   "light": #f8f9fa,
-   "dark": #343a40
- );
+$theme-colors: (
+  "primary": #3778c2,
+  "secondary": #6c757d,
+  "success": #28a745,
+  "info": #17a2b8,
+  "warning": #ffc107,
+  "danger": #dc3545,
+  "light": #f8f9fa,
+  "dark": #343a40
+);
 
- $body-color: #434b54;
+$body-color: #434b54;
 
 @import "bootstrap";
