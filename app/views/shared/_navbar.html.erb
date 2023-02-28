@@ -1,5 +1,5 @@
 <header>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary bg-primary">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary bg-primary navbar-dark">
     <div class="container-fluid">
       <a class="navbar-brand text-white" href="#">BudgetApp</a>
       <button
@@ -15,7 +15,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link" href=<%= categories_path %>>Home</a>
+          <a class="nav-link text-light" href=<%= categories_path %>>Home</a>
         </div>
         <div class="nav-buttons ms-auto d-flex align-items-baseline">
           <% if current_user.present? %>
