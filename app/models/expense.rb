@@ -4,4 +4,5 @@ class Expense < ApplicationRecord
   has_many :groups, through: :group_expenses, dependent: :destroy
 
   validates :name, presence: true, length: { minimum: 1, maximum: 50 }
+  validates :amount, presence: true, numericality: { greater_than: 0 }
 end
