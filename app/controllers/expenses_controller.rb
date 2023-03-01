@@ -19,7 +19,7 @@ class ExpensesController < ApplicationController
     @group = Group.find(params[:category_id])
     @group_expense = GroupExpense.new(group: @group, expense: @expense)
     @groups = Group.all
-    
+
     respond_to do |format|
       if @expense.save
         @group_expense.save
