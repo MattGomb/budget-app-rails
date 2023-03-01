@@ -1,9 +1,11 @@
-<h1>New group</h1>
+<section class="mx-4 my-3">
+  <h1>New category</h1>
 
-<%= render "form", group: @group %>
+  <%= render "form", group: @group %>
 
-<br>
+  <br>
 
-<div>
-  <%= link_to "Back to groups", groups_path %>
-</div>
+  <div>
+    <%= link_to "Back to categories", categories_path, class: 'btn btn-secondary' %>
+  </div>
+</section>

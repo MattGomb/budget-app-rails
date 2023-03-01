@@ -2,7 +2,7 @@
   <h2>Log in</h2>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="text-center">
+  <div>
     <div class="field mb-3">
       <%= f.label :email %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -21,7 +21,7 @@
     <% end %>
 
     <div class="actions">
-      <%= f.submit "Log in", class: 'btn btn-primary mb-3' %>
+      <%= f.submit "Sign in", class: 'btn btn-primary mb-3' %>
     </div>
   </div>
   <% end %>

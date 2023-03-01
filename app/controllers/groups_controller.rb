@@ -7,40 +7,25 @@ class GroupsController < ApplicationController
   end
 
   # GET /groups/1 or /groups/1.json
-  def show; end
+  def show
+    @expenses = @group.expenses
+  end
 
   # GET /groups/new
   def new
     @group = Group.new
   end
 
-  # GET /groups/1/edit
-  def edit; end
-
   # POST /groups or /groups.json
   def create
     @group = Group.new(group_params)
+    @group.author = current_user
 
     respond_to do |format|
       if @group.save
-        format.html { redirect_to group_url(@group), notice: 'Group was successfully created.' }
-        format.json { render :show, status: :created, location: @group }
+        format.html { redirect_to category_url(@group), notice: 'Category was successfully created.' }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @group.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /groups/1 or /groups/1.json
-  def update
-    respond_to do |format|
-      if @group.update(group_params)
-        format.html { redirect_to group_url(@group), notice: 'Group was successfully updated.' }
-        format.json { render :show, status: :ok, location: @group }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @group.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -50,8 +35,7 @@ class GroupsController < ApplicationController
     @group.destroy
 
     respond_to do |format|
-      format.html { redirect_to groups_url, notice: 'Group was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to categories_url, notice: 'Group was successfully destroyed.' }
     end
   end
 

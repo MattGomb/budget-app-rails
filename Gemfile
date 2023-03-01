@@ -61,7 +61,6 @@ group :development do
   # To be able to use html shortcuts in .erb-files
   gem 'htmlbeautifier'
 
-  gem 'rubocop', '>= 1.0', '< 2.0'
   gem 'web-console'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
@@ -92,3 +91,5 @@ gem 'devise'
 gem 'bootstrap', '~> 5.1.3'
 
 gem 'erb-formatter', '~> 0.4.2'
+
+gem 'rubocop'

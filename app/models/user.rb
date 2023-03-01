@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :expenses, foreign_key: 'author_id', dependent: :destroy
   has_many :groups, foreign_key: 'author_id', dependent: :destroy
 
-  validates :name, presence: true, length: { minimum: 1, maximum: 50 }
-  validates :email, presence: true, length: { minimum: 1, maximum: 50 }, uniqueness: true
+  validates :name, presence: true, length: { minimum: 2, maximum: 50 }
+  validates :email, presence: true, length: { minimum: 2, maximum: 50 }, uniqueness: true
   validates :password, presence: true, length: { minimum: 6, maximum: 20 }
 end
