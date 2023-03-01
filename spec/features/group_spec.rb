@@ -4,7 +4,7 @@ RSpec.describe 'Groups page', type: :system do
   describe 'Group/index page' do
     before(:each) do
       @user = User.create!(name: 'name', email: 'email@email.com',
-                          password: 'password', password_confirmation: 'password')
+                            password: 'password', password_confirmation: 'password')
       @group = Group.create(name: 'name', icon: 'https://icons.com/icon1', author: @user)
       @user.skip_confirmation!
       @user.save!

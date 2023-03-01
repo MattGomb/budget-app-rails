@@ -4,7 +4,7 @@ RSpec.describe 'Expense page', type: :system do
   describe 'Group/show page' do
     before(:each) do
       @user = User.create!(name: 'name', email: 'email@email.com',
-                          password: 'password', password_confirmation: 'password')
+                            password: 'password', password_confirmation: 'password')
       @group = Group.create(name: 'travel', icon: 'https://icons.com/icon1', author_id: @user.id)
       @user.skip_confirmation!
       @user.save!

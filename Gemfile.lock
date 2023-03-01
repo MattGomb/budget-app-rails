@@ -322,7 +322,7 @@ DEPENDENCIES
   rails (~> 7.0.4, >= 7.0.4.2)
   rails-controller-testing
   rspec-rails
-  rubocop (>= 1.0, < 2.0)
+  rubocop
   selenium-webdriver
   sprockets-rails
   stimulus-rails
