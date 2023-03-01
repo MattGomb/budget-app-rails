@@ -1,5 +1,5 @@
 class ExpensesController < ApplicationController
-  before_action :set_expense, only: %i[show edit update destroy]
+  before_action :set_expense, only: %i[show edit update]
 
   # GET /expenses or /expenses.json
   def index
@@ -32,11 +32,11 @@ class ExpensesController < ApplicationController
 
   # DELETE /expenses/1 or /expenses/1.json
   def destroy
-    @expense.id = params[:expense_id]
+    @expense = Expense.find(params[:expense_id])
     @expense.destroy
 
     respond_to do |format|
-      format.html { redirect_to expenses_url, notice: 'Expense was successfully destroyed.' }
+      format.html { redirect_to category_path, notice: 'Expense was successfully destroyed.' }
     end
   end
 

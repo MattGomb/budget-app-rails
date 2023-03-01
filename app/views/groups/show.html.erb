@@ -8,14 +8,20 @@
     <h3>
       <%= @group.name %>: $<%= @group.total_expenses %>
     </h3>
-    <% @expenses.each do |e| %>
+    <% @expenses.order(created_at: :desc).each do |e| %>
     <div class="container card mb-2">
-      <div class="mt-2">
-        <h5><%= e.name %></h5>
-        <p class="mb-0">$ <%= e.amount %></p>
+      <div>
+        <div class="mt-2">
+          <h5><%= e.name %></h5>
+          <p class="mb-0">$ <%= e.amount %></p>
+        </div>
+        <div>
+        <%= %>
+        <%= button_to "", category_expense_path(category_id: @group.id, expense_id: e.id), params: {expense_id: e.id}, class:'bi bi-trash3 btn btn-danger', method: :delete %>
+        </div>
       </div>
       <div class="d-flex justify-content-end">
-        <%= e.updated_at.strftime('%A-%b-%Y | %H:%M:%S') %>
+        <%= e.created_at.strftime('added at: %d %b %Y | %H:%M') %>
       </div>
     </div>
     <% end %>
