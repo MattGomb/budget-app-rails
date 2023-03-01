@@ -6,17 +6,11 @@ class ExpensesController < ApplicationController
     @expenses = Expense.all
   end
 
-  # GET /expenses/1 or /expenses/1.json
-  def show; end
-
   # GET /expenses/new
   def new
     @expense = Expense.new
     @group = Group.find(params[:category_id])
   end
-
-  # GET /expenses/1/edit
-  def edit; end
 
   # POST /expenses or /expenses.json
   def create
@@ -36,26 +30,13 @@ class ExpensesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /expenses/1 or /expenses/1.json
-  def update
-    respond_to do |format|
-      if @expense.update(expense_params)
-        format.html { redirect_to expense_url(@expense), notice: 'Expense was successfully updated.' }
-        format.json { render :show, status: :ok, location: @expense }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @expense.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
   # DELETE /expenses/1 or /expenses/1.json
   def destroy
+    @expense.id = params[:expense_id]
     @expense.destroy
 
     respond_to do |format|
       format.html { redirect_to expenses_url, notice: 'Expense was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
@@ -63,7 +44,7 @@ class ExpensesController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_expense
-    @expense = Expense.find(params[:id])
+    @expense = Expense.find(params[:expense_id])
   end
 
   # Only allow a list of trusted parameters through.
