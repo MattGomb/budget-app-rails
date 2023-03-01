@@ -12,7 +12,7 @@ class ExpensesController < ApplicationController
   # GET /expenses/new
   def new
     @expense = Expense.new
-    @groups = Group.all
+    @group = Group.find(params[:category_id])
   end
 
   # GET /expenses/1/edit
@@ -22,10 +22,13 @@ class ExpensesController < ApplicationController
   def create
     @expense = Expense.new(expense_params)
     @expense.author = current_user
-    @group = Group.find(params[:group_id])
-
+    @group = Group.find(params[:category_id])
+    @group_expense = GroupExpense.new(group: @group, expense: @expense)
+    @groups = Group.all
+    
     respond_to do |format|
       if @expense.save
+        @group_expense.save
         format.html { redirect_to category_url(@group), notice: 'Expense was successfully created.' }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -65,6 +68,6 @@ class ExpensesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def expense_params
-    params.require(:expense).permit(:author_id, :name, :amount)
+    params.require(:expense).permit(:name, :amount, :category_id)
   end
 end
