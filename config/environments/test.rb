@@ -47,7 +47,7 @@ Rails.application.configure do
   config.active_support.deprecation = :stderr
 
   # Raise exceptions for disallowed deprecations.
-  config.active_support.disallowed_deprecation = :raise
+  config.active_support.disallowed_deprecation = :raise 
 
   # Tell Active Support which deprecation messages to disallow.
   config.active_support.disallowed_deprecation_warnings = []
@@ -57,4 +57,6 @@ Rails.application.configure do
 
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
 end

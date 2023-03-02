@@ -1,0 +1,14 @@
+<section class="d-flex flex-column align-items-center text-center my-5 mx-2">
+  <div class="my-3 container-md">
+    <h1>Welcome to the Budget App</h1>
+    <p>
+      This is a simple budget app that allows you to track your expenses and
+      income. You can create categories to organize your expenses, and see
+      the total amount spent in each category.
+    </p>
+  </div>
+  <div class="d-flex m-3">
+    <%= button_to 'Sign up', new_user_registration_path, method: :get, class: 'btn btn-success text-light me-2' %>
+    <%= button_to 'Sign in', new_user_session_path, method: :get, class: 'btn btn-success text-light me-2' %>
+  </div>
+</section>

@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Categories</h1>
+
+<div id="groups" class="d-flex flex-column m-auto" style="width: 90%;">
+  <% @groups.each do |group| %>
+    <%= link_to category_path(group), class: 'text-decoration-none', style: 'color: #434b54;' do %>
+      <div class="my-2">
+        <%= render group %>
+      </div>
+    <% end %>
+  <% end %>
+  <%= link_to "New category", new_category_path, class: 'btn btn-success text-light' %>
+</div>
+
