@@ -61,6 +61,7 @@ can upload icons to make the app cooler. Users can also delete categories and ex
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 - [Live Demo Link](https://budgetappmatt.onrender.com)
+- [video introduction](https://www.loom.com/share/bdfe3476182e498eb8b86b71afd43e13)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
