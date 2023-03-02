@@ -6,7 +6,6 @@ RSpec.describe 'Groups page', type: :system do
       @user = User.create!(name: 'name', email: 'email@email.com',
                            password: 'password', password_confirmation: 'password')
       @group = Group.create(name: 'name', icon: 'https://icons.com/icon1', author: @user)
-      @user.skip_confirmation!
       @user.save!
       visit new_user_session_path
       fill_in 'user_email', with: @user.email
